@@ -1,0 +1,11 @@
+# Molecule managed
+---
+command:
+  help:
+    exit-status: 0
+    exec: "flatpak run io.neovim.nvim --version"
+    stdout:
+      - "/NVIM/"
+    stderr: []
+    timeout: 10000      # in milliseconds
+    skip: false

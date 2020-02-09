@@ -1,0 +1,15 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+flatpak_repos_create: "{{ _flatpak_repos_create['all']
+  | union ( _flatpak_repos_create[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+flatpak_packages_install: "{{ _flatpak_packages_install['all']
+  | union ( _flatpak_packages_install[my_os]
+  | default([]) ) }}"

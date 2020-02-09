@@ -1,0 +1,14 @@
+---
+# vars file for packages
+
+# Repo files to create
+_flatpak_repos_create:
+  all: []
+  CentOS_7: []
+  RedHat_7: []
+  CentOS_8: []
+  RedHat_8: []
+  Fedora_31: []
+  Debian_10: []
+  Ubuntu_18:
+    - repo: "ppa:alexlarsson/flatpak"

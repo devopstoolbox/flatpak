@@ -1,0 +1,8 @@
+---
+# Install flatpak packages
+
+- name: packages are installed
+  package:
+    name: "{{ flatpak_packages_install }}"
+    state: present
+  become: true
