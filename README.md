@@ -8,10 +8,10 @@ flatpak
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.flatpak](https://galaxy.ansible.com/devops-toolbox.flatpak)
+[https://galaxy.ansible.com/devopstoolbox.flatpak](https://galaxy.ansible.com/devopstoolbox.flatpak)
 
 ```bash
-ansible-galaxy install devops-toolbox.flatpak
+ansible-galaxy install devopstoolbox.flatpak
 ```
 
 Requirements
@@ -61,7 +61,7 @@ Example Playbook
   tasks:
     - name: flatpak is configured
       import_role:
-        name: devops-toolbox.flatpak
+        name: devopstoolbox.flatpak
       vars:
         # Flatpak method: user or system
         flatpak_method: system
@@ -92,4 +92,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
