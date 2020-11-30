@@ -1,20 +1,20 @@
 ---
 # Configure flatpak
 
-- name: Add the flathub flatpak repository remote to the user installation
+- name: "Add flathub flatpak repository remote to {{ flatpak_method }} installation"
   flatpak_remote:
     name: flathub
     state: present
     flatpakrepo_url: "{{ item }}"
     method: "{{ flatpak_method }}"
-  become: true
+  become: "{{ 'yes' if flatpak_method == 'system' else 'no' }}"
   loop: "{{ flatpak_repos }}"
 
-- name: install packages for current user
+- name: "install packages for {{ flatpak_method }}"
   flatpak:
     name: "{{ item }}"
     state: present
     method: "{{ flatpak_method }}"
-  become: true
+  become: "{{ 'yes' if flatpak_method == 'system' else 'no' }}"
   loop: "{{ flatpak_packages }}"
   poll: 0
